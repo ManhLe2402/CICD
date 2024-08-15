@@ -63,7 +63,6 @@ jobs:
           envs: DOCKER_ID,DOCKER_IMAGE_NAME,IMAGE_TAG,DOCKER_COMPOSE_PATH
           script_stop: true
           script: |
-            docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
             docker pull ${{ secrets.DOCKER_ID }}/${{ secrets.DOCKER_IMAGE_NAME }}:${{ env.IMAGE_TAG }}
             docker compose -f $DOCKER_COMPOSE_PATH down -v
             docker compose -f $DOCKER_COMPOSE_PATH up -d
