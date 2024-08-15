@@ -1,4 +1,4 @@
-name: Deployment Pipeline
+name: Deployment Pipeline CI/CD
 
 # Xác định sự kiện trigger cho pipiline
 # trường hợp này là branch main
