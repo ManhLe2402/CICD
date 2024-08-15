@@ -16,6 +16,9 @@ on:
 jobs:
   #flow deploy
   deloy-to-dev:
+    runs-on: ubuntu-latest
+    if: github.ref != 'refs/heads/main'
+
     #Các bước
     steps:
       #Đặt tên cho bước
