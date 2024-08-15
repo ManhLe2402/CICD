@@ -17,7 +17,6 @@ jobs:
   #flow deploy
   deloy-to-dev:
     runs-on: ubuntu-latest
-    if: github.ref != 'refs/heads/main'
 
     #Các bước
     steps:
@@ -93,12 +92,12 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           envs: DOCKER_ID,DOCKER_IMAGE_NAME,IMAGE_TAG,DOCKER_COMPOSE_PATH
-          cript_stop: true
+          script_stop: true
           script: |
             docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
             docker pull ${{ secrets.DOCKER_ID }}/${{ secrets.DOCKER_IMAGE_NAME }}:${{ env.IMAGE_TAG }}
             docker compose -f $DOCKER_COMPOSE_PATH down -v
-            docker compose -f $DOCKER_COMPOSE_PATH --env-file $CONFIG_FILE up -d
+            docker compose -f $DOCKER_COMPOSE_PATH up -d
         #     docker rm frontend
         #     docker run -d -p 8080:80 --name frontend ${{ secrets.DOCKER_ID }}/${{ secrets.DOCKER_IMAGE_NAME }}:${{ env.IMAGE_TAG }}
         #     docker stop frontend
