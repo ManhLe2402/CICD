@@ -45,7 +45,7 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SERVER_SSH_KEY }}
-          source: "/"
+          source: "/blob/main/"
           target: "/root/deploy/frontend"
 
       - name: SSH into server and deploy
