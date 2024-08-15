@@ -49,7 +49,7 @@ jobs:
           target: "/root/deploy/frontend"
 
       - name: SSH into server and deploy
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v0.1.3
         env:
           DOCKER_ID: ${{ secrets.DOCKER_ID }}
           IMAGE_TAG: ${{ env.IMAGE_TAG }}
