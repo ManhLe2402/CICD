@@ -1,0 +1,20 @@
+# Bỏ qua node_modules vì lát nữa ở Dockerfile sẽ chạy npm install
+node_modules
+
+# Bỏ qua dist vì lát nữa ở Dockerfile sẽ chạy npm run build
+dist 
+
+# Bỏ qua folder .docker vì folder này chỉ có service db và redis mới cần (ta đang build image cho service app)
+.docker
+
+# Bỏ qua static-file mà chúng ta đã upload lên trong quá trình test
+public/*
+
+# Bỏ qua Dockerfile không đưa vào image vì file này chỉ dùng tại thời điểm build image
+Dockerfile
+
+# Bỏ qua file docker-compose vì file này chỉ dùng tại thời điểm khởi chạy project
+docker-compose.yml
+
+# File tạm trong quá trình test
+.tmp

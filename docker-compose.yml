@@ -1,0 +1,12 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: manhld2402/frontend
+    container_name: frontend
+    platform: linux/amd64
+    volumes:
+      - ".:/urs/share/nginx/html"
+    ports:
+      - "8080:80"
