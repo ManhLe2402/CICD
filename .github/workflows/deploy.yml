@@ -60,7 +60,7 @@ jobs:
           envs: DOCKER_ID,DOCKER_IMAGE_NAME,IMAGE_TAG,DOCKER_COMPOSE_PATH
           script_stop: true
           script: |
-            docker rmi ${{ secrets.DOCKER_ID }}/${{ secrets.DOCKER_IMAGE_NAME }}
             docker compose -f $DOCKER_COMPOSE_PATH down -v
+            docker rmi ${{ secrets.DOCKER_ID }}/${{ secrets.DOCKER_IMAGE_NAME }}
             docker pull ${{ secrets.DOCKER_ID }}/${{ secrets.DOCKER_IMAGE_NAME }}
             docker compose -f $DOCKER_COMPOSE_PATH up -d
