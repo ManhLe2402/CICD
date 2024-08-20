@@ -1,3 +1,6 @@
 FROM nginx
-WORKDIR /app
+WORKDIR /usr/share/nginx/html
+COPY index.html index.html
+
+WORKDIR /usr/share/nginx
 COPY . .
