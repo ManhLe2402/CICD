@@ -7,6 +7,6 @@ services:
     container_name: frontend
     platform: linux/amd64
     volumes:
-      - ".:/urs/share/nginx/html"
+      - ".:/app"
     ports:
       - "8080:80"
